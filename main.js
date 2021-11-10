@@ -31,7 +31,7 @@ setTimeout( () => {
         let userNum;
         do {
             userNum = parseInt(prompt(`Inserisci il ${i + 1}° numero`));
-        } while (userNumbers.includes(userNum))
+        } while (userNumbers.includes(userNum) || isNaN(userNum))
 
         userNumbers.push(userNum);
     }
