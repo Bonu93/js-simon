@@ -22,8 +22,10 @@ numbers.forEach((number) => {
 setTimeout( () => {
 
     //numbers disappear after timeout
-    displayNum.innerHTML = '';
+    displayNum.innerHTML = ''; 
+}, 3000);
 
+setTimeout( () => {
     //pick user numbers and push them in array
     for (i = 0; i < numbers.length; i++) {
         let userNum = parseInt(prompt('Inserisci un numero che hai memorizzato'));
@@ -45,8 +47,7 @@ setTimeout( () => {
     commonNumbers.forEach((number) => {
         displayNum.innerHTML += `${number} `;
     })
-    
-}, 30000);
+}, 3050);
 
 
 
