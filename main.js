@@ -36,18 +36,19 @@ setTimeout( () => {
     const commonNumbers = userNumbers.filter( number => numbers.includes(number) );
 
     //endgame message
-
     if (commonNumbers.length === userNumbers.length) {
-        displayResult.innerHTML = `Complimenti, hai memorizzato tutti i numeri!`
+        displayResult.innerHTML = `Complimenti, hai memorizzato tutti i numeri!`;
+    } else if (commonNumbers.length === 0) {
+        displayResult.innerHTML = `Non hai memorizzato nessun numero`;
     } else {
-        displayResult.innerHTML = `Peccato, hai memorizzato solo ${commonNumbers.length} numeri`
+        displayResult.innerHTML = `Peccato, hai memorizzato solo ${commonNumbers.length} numeri`;
     }
     
     //show memorized numbers
     commonNumbers.forEach((number) => {
         displayNum.innerHTML += `${number} `;
     })
-    
+
 }, 3050);
 
 
@@ -72,7 +73,9 @@ function genArrayNumbers(length) {
     let array = [];
     for (let i = 0; i < length; i++) {
         let number = Math.floor(Math.random() * 100) +1;
-        array.push(number);
+        if (!array.includes(number)) {
+            array.push(number);
+        }
     }
     return array;
 }
