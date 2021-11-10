@@ -28,7 +28,11 @@ setTimeout( () => {
 setTimeout( () => {
     //pick user numbers and push them in array
     for (i = 0; i < numbers.length; i++) {
-        let userNum = parseInt(prompt('Inserisci un numero che hai memorizzato'));
+        let userNum;
+        do {
+            userNum = parseInt(prompt(`Inserisci il ${i + 1}° numero`));
+        } while (userNumbers.includes(userNum))
+
         userNumbers.push(userNum);
     }
 
@@ -49,7 +53,7 @@ setTimeout( () => {
         displayNum.innerHTML += `${number} `;
     })
 
-}, 30050);
+}, 3050);
 
 
 
@@ -72,10 +76,11 @@ setTimeout( () => {
 function genArrayNumbers(length) {
     let array = [];
     for (let i = 0; i < length; i++) {
-        let number = Math.floor(Math.random() * 100) +1;
-        if (!array.includes(number)) {
-            array.push(number);
-        }
+        let number;
+        do {
+            number = Math.floor(Math.random() * 99) +1;
+        } while (array.includes(number)) 
+        array.push(number);
     }
     return array;
 }
