@@ -23,7 +23,7 @@ setTimeout( () => {
 
     //numbers disappear after timeout
     displayNum.innerHTML = ''; 
-}, 3000);
+}, 30000);
 
 setTimeout( () => {
     //pick user numbers and push them in array
@@ -49,7 +49,7 @@ setTimeout( () => {
         displayNum.innerHTML += `${number} `;
     })
 
-}, 3050);
+}, 30050);
 
 
 
