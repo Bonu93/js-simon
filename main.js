@@ -53,7 +53,7 @@ setTimeout( () => {
         displayNum.innerHTML += `${number} `;
     })
 
-}, 3050);
+}, 30050);
 
 
 
