@@ -18,7 +18,7 @@ numbers.forEach((number) => {
 });
 
 //numbers disappear after timeout
-setInterval( () => {
+setTimeout( () => {
     displayNum.innerHTML = '';
 }, 3000);
 
