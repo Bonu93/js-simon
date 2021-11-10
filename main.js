@@ -47,6 +47,7 @@ setTimeout( () => {
     commonNumbers.forEach((number) => {
         displayNum.innerHTML += `${number} `;
     })
+    
 }, 3050);
 
 
