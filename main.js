@@ -6,6 +6,7 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 
 //numbers array
 const numbers = genArrayNumbers(5);
+const userNumbers = [];
 
 //dom refs
 const displayNum = document.querySelector('.numbers');
@@ -17,10 +18,36 @@ numbers.forEach((number) => {
     displayNum.innerHTML += `${number} `;
 });
 
-//numbers disappear after timeout
+
 setTimeout( () => {
+
+    //numbers disappear after timeout
     displayNum.innerHTML = '';
-}, 3000);
+
+    //pick user numbers and push them in array
+    for (i = 0; i < numbers.length; i++) {
+        let userNum = parseInt(prompt('Inserisci un numero che hai memorizzato'));
+        userNumbers.push(userNum);
+    }
+
+    //compare user numbers to cpu numbers
+    const commonNumbers = userNumbers.filter( number => numbers.includes(number) );
+
+    //endgame message
+
+    if (commonNumbers.length === userNumbers.length) {
+        displayResult.innerHTML = `Complimenti, hai memorizzato tutti i numeri!`
+    } else {
+        displayResult.innerHTML = `Peccato, hai memorizzato solo ${commonNumbers.length} numeri`
+    }
+    
+    //show memorized numbers
+    commonNumbers.forEach((number) => {
+        displayNum.innerHTML += `${number} `;
+    })
+    
+}, 5000);
+
 
 
 
